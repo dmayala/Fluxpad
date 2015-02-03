@@ -19,7 +19,7 @@ gulp.task 'browserify', ->
     # required watchify args
     cache: {}, packageCache: {}, fullPaths: true,
     # specify app entry point
-    entries: ['./client/src/js/initialize.coffee'],
+    entries: ['./client/src/js/app.coffee'],
     # file extensions
     extensions: ['.coffee', '.hbs']
     # Enable source maps

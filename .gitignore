@@ -18,8 +18,10 @@ client/dist/
 # Mac
 .DS_Store
 
-# Emacs
+# Vim
 *~
+*.swp
+*.swo
 
 # thumbnails
 Thumbs.db
