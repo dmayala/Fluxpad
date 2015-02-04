@@ -1,6 +1,9 @@
 React = require 'react'
 DocumentStore = require '../stores/DocumentStore'
 
+# components
+DocumentSidebar = require './DocumentSidebar.react'
+
 getState = ->
   documents: DocumentStore.getDocuments()
 
@@ -17,11 +20,8 @@ FluxpadApp = React.createClass
   _onChange: -> @setState getState()
 
   render: ->
-    document = @state.documents
-    <div>
-      <p>Title: { document.title }</p>
-      <p>Data: { document.data } </p>
-      <p>Author: { document.author }</p>
-    </div>
+    documents = @state.documents
+
+    <DocumentSidebar documents={documents} />
 
 module.exports = FluxpadApp

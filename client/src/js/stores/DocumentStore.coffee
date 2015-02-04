@@ -3,9 +3,9 @@ EventEmitter = require('events').EventEmitter
 Constants = require '../constants/Constants'
 _ = require 'underscore'
 
-_documents = {}
+_documents = []
 
-loadDocumentData = (data) -> _documents = data[0]
+loadDocumentData = (data) -> _documents = data
 
 DocumentStore = _.extend {}, EventEmitter::,
   getDocuments: -> _documents
