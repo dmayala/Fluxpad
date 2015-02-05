@@ -6,6 +6,7 @@ DocumentSidebar = require './DocumentSidebar.react'
 
 getState = ->
   documents: DocumentStore.getDocuments()
+  selectedDocument: DocumentStore.getSelected()
 
 FluxpadApp = React.createClass
 
@@ -21,7 +22,13 @@ FluxpadApp = React.createClass
 
   render: ->
     documents = @state.documents
+    selected = @state.selectedDocument
 
-    <DocumentSidebar documents={documents} />
+    (
+      <div>
+        <DocumentSidebar documents={documents} />
+        <p>{ documents[selected].data }</p>
+      </div>
+    )
 
 module.exports = FluxpadApp
