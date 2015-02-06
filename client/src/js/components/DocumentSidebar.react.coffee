@@ -6,10 +6,22 @@ DocumentSidebar = React.createClass
 
   render: ->
     documents = @props.documents.map (doc, i) =>
-      <li onClick={ @_onClick.bind(@, i) } key={i}>{ doc.title }</li>
+      <li onClick={ @_onClick.bind(@, i) } key={i}><a href="#">{ doc.title }</a></li>
 
-    (<ul>
-      {documents}
-    </ul>)
+    (<div className="navbar navbar-default navbar-fixed-top">
+      <div className="navbar-header">
+        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+        </button>
+        <a className="navbar-brand">Fluxpad v0.0.1 </a>
+      </div>
+      <div className="navbar-collapse collapse navbar-responsive-collapse">
+        <ul className="nav navbar-nav">
+          { documents }
+        </ul>
+      </div>
+    </div>)
 
 module.exports = DocumentSidebar

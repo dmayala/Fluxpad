@@ -27,7 +27,7 @@ FluxpadApp = React.createClass
     (
       <div>
         <DocumentSidebar documents={documents} />
-        <p>{ documents[selected].data }</p>
+        <div id="main-region" className="col-xs-12 maxheight">{ documents[selected].data }</div>
       </div>
     )
 
