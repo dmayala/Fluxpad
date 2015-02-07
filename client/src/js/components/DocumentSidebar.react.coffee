@@ -1,12 +1,13 @@
-React = require 'react'
+React = require 'react/addons'
 Actions = require '../actions/Actions'
+cx = React.addons.classSet
 
 DocumentSidebar = React.createClass
   _onClick: (i) -> Actions.setCurrentDocument i
 
   render: ->
     documents = @props.documents.map (doc, i) =>
-      <li onClick={ @_onClick.bind(@, i) } key={i}><a href="#">{ doc.title }</a></li>
+      <li className={ cx active: @props.selected is i } onClick={ @_onClick.bind(@, i) } key={i}><a href="#">{ doc.title }</a></li>
 
     (<div className="navbar navbar-default navbar-fixed-top">
       <div className="navbar-header">

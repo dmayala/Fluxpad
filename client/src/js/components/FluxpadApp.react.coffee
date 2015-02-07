@@ -3,6 +3,7 @@ DocumentStore = require '../stores/DocumentStore'
 
 # components
 DocumentSidebar = require './DocumentSidebar.react'
+DocumentPanel = require './DocumentPanel.react'
 
 getState = ->
   documents: DocumentStore.getDocuments()
@@ -26,8 +27,8 @@ FluxpadApp = React.createClass
 
     (
       <div>
-        <DocumentSidebar documents={documents} />
-        <div id="main-region" className="col-xs-12 maxheight">{ documents[selected].data }</div>
+        <DocumentSidebar selected={selected} documents={documents} />
+        <DocumentPanel document={ documents[selected] } />
       </div>
     )
 
