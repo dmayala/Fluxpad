@@ -9,9 +9,10 @@ getState = ->
   documents: DocumentStore.getDocuments()
   selectedDocument: DocumentStore.getSelected()
 
-FluxpadApp = React.createClass
+class FluxpadApp extends React.Component
 
-  getInitialState: -> getState()
+  constructor: ->
+    @state = getState()
 
   componentDidMount: ->
     DocumentStore.addChangeListener @_onChange
@@ -19,7 +20,7 @@ FluxpadApp = React.createClass
   componentWillUnmount: ->
     DocumentStore.removeChangeListener @_onChange
 
-  _onChange: -> @setState getState()
+  _onChange: => @setState getState()
 
   render: ->
     documents = @state.documents

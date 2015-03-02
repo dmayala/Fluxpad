@@ -16,7 +16,7 @@
     "handlebars": "^2.0.0-beta.1",
     "hapi": "^6.7.1",
     "joi": "^4.8.0",
-    "react": "^0.12.2",
+    "react": "^0.13.0-rc1",
     "underscore": "^1.7.0"
   },
   "devDependencies": {

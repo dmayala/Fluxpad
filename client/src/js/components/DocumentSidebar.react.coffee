@@ -2,7 +2,7 @@ React = require 'react/addons'
 Actions = require '../actions/Actions'
 cx = React.addons.classSet
 
-DocumentSidebar = React.createClass
+class DocumentSidebar extends React.Component
   _onClick: (i) -> Actions.setCurrentDocument i
 
   render: ->
