@@ -2,8 +2,22 @@ html, body {
   height: 100%;
 }
 
+.notepad {
+  height: calc(100% - 120px);
+  textarea {
+    height: 100%;
+  }
+}
+
 .maxheight {
   height: 100%;
+}
+
+#flux-pad {
+  height: 100%;
+  > div {
+    height: inherit;
+  }
 }
 
 #main-region {

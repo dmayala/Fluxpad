@@ -1,5 +1,8 @@
 # require dependencies
+require 'coffee-react/register'
 Hapi = require 'hapi'
+React = require 'react'
+FluxpadApp = require './client/src/js/components/FluxpadApp.react'
 
 # initial configuration 
 host = process.argv[2] || 'localhost'
