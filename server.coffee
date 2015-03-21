@@ -20,8 +20,8 @@ server.route
   method: 'GET'
   path: '/'
   handler: (request, reply) ->
-    reply.view 'index'
-
+    markup = React.renderToString React.createElement FluxpadApp
+    reply.view 'index', markup: markup
 server.route
   method: 'GET'
   path: '/public/{file*}'
