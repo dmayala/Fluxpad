@@ -22,14 +22,19 @@ class FluxpadApp extends React.Component
 
   _onChange: => @setState getState()
 
-  render: ->
+  _onInputChange: (value) =>
+    document = @state.documents[@state.selectedDocument]
+    document['data'] = value
+    @setState document: document
+
+  render: =>
     documents = @state.documents
     selected = @state.selectedDocument
 
     (
       <div>
         <DocumentSidebar selected={selected} documents={documents} />
-        <DocumentPanel document={ documents[selected] } />
+        <DocumentPanel document={ documents[selected] } onInputChange={@._onInputChange} />
       </div>
     )
 

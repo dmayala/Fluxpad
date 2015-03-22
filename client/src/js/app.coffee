@@ -4,9 +4,9 @@ DocumentData = require './DocumentData'
 DocumentAPI = require './utils/DocumentAPI'
 FluxpadApp = require './components/FluxpadApp.react'
 
-DocumentData.init()
+# DocumentData.init()
 
-DocumentAPI.getDocumentData()
+# DocumentAPI.getDocumentData()
 
 React.render(
   <FluxpadApp />,
